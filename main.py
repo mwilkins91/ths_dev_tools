@@ -2,8 +2,6 @@ import asyncio
 
 import iterm2
 
-
-
 async def start_frontend(session: iterm2.Session):
     await session.async_send_text('npm start \n')
 
@@ -40,6 +38,7 @@ async def main(connection):
         await pane3.async_send_text('cd /Users/markwilkins/projects/python-rest \n')
         await pane4.async_send_text('cd /Users/markwilkins/projects/ths-data-reporter \n')
 
+        await pane1.async_send_text('code /Users/markwilkins/projects/enrichment-tracking-front-end-v2 \n')
         p1 = start_frontend(pane1)
         p2 = start_backend(pane3)
         p3 = start_socket(pane2)
