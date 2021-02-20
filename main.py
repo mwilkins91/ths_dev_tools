@@ -1,6 +1,10 @@
 import asyncio
-
 import iterm2
+
+PATH_TO_FRONTEND='/Users/markwilkins/projects/enrichment-tracking-front-end-v2'
+PATH_TO_BACKEND='/Users/markwilkins/projects/python-rest'
+PATH_TO_SOCKET='Users/markwilkins/projects/enrichment-tracking-socket-server'
+PATH_TO_REPORTER='/Users/markwilkins/projects/ths-data-reporter'
 
 async def start_frontend(session: iterm2.Session):
     await session.async_send_text('npm start \n')
@@ -33,12 +37,12 @@ async def main(connection):
         session2 = tab.current_session
         pane4 = await session2.async_split_pane(vertical=False)
 
-        await pane1.async_send_text('cd /Users/markwilkins/projects/enrichment-tracking-front-end-v2 \n')
-        await pane2.async_send_text('cd /Users/markwilkins/projects/enrichment-tracking-socket-server \n')
-        await pane3.async_send_text('cd /Users/markwilkins/projects/python-rest \n')
-        await pane4.async_send_text('cd /Users/markwilkins/projects/ths-data-reporter \n')
+        await pane1.async_send_text(f'cd {PATH_TO_FRONTEND} \n')
+        await pane2.async_send_text(f'cd {PATH_TO_SOCKET} \n')
+        await pane3.async_send_text(f'cd {PATH_TO_BACKEND} \n')
+        await pane4.async_send_text(f'cd {PATH_TO_REPORTER} \n')
 
-        await pane1.async_send_text('code /Users/markwilkins/projects/enrichment-tracking-front-end-v2 \n')
+        await pane1.async_send_text(f'code {PATH_TO_FRONTEND} \n')
         p1 = start_frontend(pane1)
         p2 = start_backend(pane3)
         p3 = start_socket(pane2)
