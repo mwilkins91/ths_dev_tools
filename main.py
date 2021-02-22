@@ -3,7 +3,7 @@ import iterm2
 
 PATH_TO_FRONTEND='/Users/markwilkins/projects/enrichment-tracking-front-end-v2'
 PATH_TO_BACKEND='/Users/markwilkins/projects/python-rest'
-PATH_TO_SOCKET='Users/markwilkins/projects/enrichment-tracking-socket-server'
+PATH_TO_SOCKET='/Users/markwilkins/projects/enrichment-tracking-socket-server'
 PATH_TO_REPORTER='/Users/markwilkins/projects/ths-data-reporter'
 
 async def start_frontend(session: iterm2.Session):
